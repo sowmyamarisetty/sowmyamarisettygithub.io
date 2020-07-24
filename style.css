@@ -1,3 +1,7 @@
+/* 3D Tic Tac Toe Stylesheet */
+/* by Brian Cottrell         */
+/* 10-07-2014                */
+
 /*Provides a container for the points that make up the 3D structure*/
 .container{
 	position: relative;
@@ -12,7 +16,7 @@
 	position: absolute;
 	border-radius: 25%;
 	margin-top: -50%;
-	background-color: #D3D3D3;
+	background-color: #FFA5A5;
 }
 /*Styles the alert message generated when a game ends*/
 .alert1{
