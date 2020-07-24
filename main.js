@@ -1,6 +1,4 @@
 /* 3D Tic Tac Toe Script */
-/* by Brian Cottrell     */
-/* 10-07-2014            */
 
 /*VARIABLES*/
 var columns = 3;								//Specifies starting number of columns
@@ -20,8 +18,8 @@ var pointSpacing = (60-pointSize)/(columns-1);	//Specifies the spacing between p
 /*FUNCTIONS*/
 //Set up the game board with the specified number of rows and columns
 function setBoard(){
-	pointSize = 14-2*columns;
-	pointSpacing = (60-pointSize)/(columns-1);
+	pointSize = 14-1.75*columns;
+	pointSpacing = (70-pointSize)/(columns-1);
 	checkCount = [0,0,0,0];
 	structure = [];
 	turnCount = 0;
@@ -45,11 +43,26 @@ function setBoard(){
 				structure[i][j][k].style.padding = ((pointSize/2)*(1+zOffset*i))+'% 0%';
 				structure[i][j][k].style.left = (pointSpacing*(1+zOffset*i)*k+i*i+i*2)+'%';
 				structure[i][j][k].style.top = (50+pointSpacing*(1+zOffset*i)*j+i*i+i*2)+'%';
-				structure[i][j][k].style.backgroundColor = '#'+(3+5*i)+'F'+(k)+'0'+(j)+'1';
+				//structure[i][j][k].style.backgroundColor = '#'+(3+5*i)+'F'+(k)+'0'+(j)+'1';
 				structure[i][j][k].addEventListener('mouseover', addFocus, false);
 				structure[i][j][k].addEventListener('mouseleave', removeFocus, false);
 				structure[i][j][k].addEventListener('click', selectPoint, false);
 				document.getElementsByClassName('container')[0].appendChild(structure[i][j][k]);
+				if(j==1){
+        				structure[i][j][k].style.backgroundColor = "#f4fa87";
+        			} 
+        			if(j==2){
+        	  			structure[i][j][k].style.backgroundColor = "deepskyblue";
+        			}
+        			if (j==3){
+        	  			structure[i][j][k].style.backgroundColor = "darkorange";
+        			}
+        			if (j==4){
+            				structure[i][j][k].style.backgroundColor = "deeppink";
+        			}
+        			if (j==5){
+        	  			structure[i][j][k].style.backgroundColor = "lightgrey";
+        			}
 			}
 		}
 	}
@@ -78,7 +91,7 @@ function resetGame(){
 	while (containerDiv.hasChildNodes()) {
 	    containerDiv.removeChild(containerDiv.lastChild);
 	}
-	document.getElementsByClassName('alert1')[0].style.visibility = 'hidden';
+	document.getElementsByClassName('alert1')[0].style.visibility = 'visible';
 	setBoard();
 }
 function resetGame(){
