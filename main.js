@@ -49,7 +49,7 @@ function setBoard(){
 				structure[i][j][k].addEventListener('click', selectPoint, false);
 				document.getElementsByClassName('container')[0].appendChild(structure[i][j][k]);
 				if(j==1){
-        				structure[i][j][k].style.backgroundColor = "#f4fa87";
+        				structure[i][j][k].style.backgroundColor = "#82E0AA";
         			} 
         			if(j==2){
         	  			structure[i][j][k].style.backgroundColor = "deepskyblue";
