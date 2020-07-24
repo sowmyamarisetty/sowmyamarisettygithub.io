@@ -1,9 +1,6 @@
+var x = "O";
 
-var zeichen = "O";
-
-  
-//setzt Buttons zurück
-function zuruecksetzen() {
+function setbuttons() {
     var b1 = document.getElementById("1");
     var b2 = document.getElementById("2");
     var b3 = document.getElementById("3");
@@ -37,7 +34,7 @@ function zuruecksetzen() {
     document.getElementById("overlay").style.visibility = "hidden";
 }
 
-function buttonsdeaktivieren() {
+function buttonsdisable() {
     var b1 = document.getElementById("1");
     var b2 = document.getElementById("2");
     var b3 = document.getElementById("3");
@@ -59,24 +56,24 @@ function buttonsdeaktivieren() {
     b9.disabled = true;
 }
 
-function popupzeigen(gewinner) {
-      //deaktiviert alle Buttons
+function popupx(getwinner) {
+      
       buttonsdeaktivieren();
     
-      //ersetzt Text
+      
       popuptext = document.getElementById("text");
-      popuptext.innerHTML = gewinner + " wins.";
+      popuptext.innerHTML = getwinner + " wins.";
     
-      //macht Popup sichtbar
+      
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       pop.style.visibility = "visible";
       overlay.style.visibility ="visible"
 }
 
-//prüft, ob Spiel zu Ende ist
-function endepruefen() {
-    //Zustand der Buttons wird ausgelesen
+
+function check() {
+    
     var b1 = document.getElementById("1").value;
     var b2 = document.getElementById("2").value;
     var b3 = document.getElementById("3").value;
@@ -87,105 +84,102 @@ function endepruefen() {
     var b8 = document.getElementById("8").value;
     var b9 = document.getElementById("9").value;
     
-    //obere Reihe
+    
     if (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) {
-        popupzeigen(b1);
+        popupz(b1);
     }
-    //linke Spalte
+    
     else if (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
-        popupzeigen(b1);
+        popupz(b1);
     }
-    //untere Reihe
+    
     else if (((b9=="X") || (b9=="O")) && ((b9 == b8) && (b8 == b7))){
-        popupzeigen(b9);
+        popupz(b9);
     }
-    //rechte Spalte
+    
     else if (((b9=="X") || (b9=="O")) && ((b9 == b6) && (b6 == b3))){
-      popupzeigen(b9);
+      popupz(b9);
     }
-    //mittlere Reihe
+    
     else if (((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))){
-      popupzeigen(b4);
+      popupz(b4);
     }
-    //mittlere Spalte
+    
     else if (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
-      popupzeigen(b2);
+      popupz(b2);
     }
-    //1-9 Diagonale
+    
     else if (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5== b9))){
-      popupzeigen(b1);
+      popupz(b1);
     }
     //7-3 Diagonale
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
-      popupzeigen(b7);
+      popupz(b7);
     }
-    //unentschieden
-//     else {
-//     alert("Unetschieden");
-//     }
+    
     }
 
   
   
   
-//X oder Y einsetzen
-function setzen(x, zeichen) {
-     if (x==1) {
+
+function set(a, x) {
+     if (a==1) {
      var button = document.getElementById("1");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==2) {
+     else if (a==2) {
      var button = document.getElementById("2");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==3) {
+     else if (a==3) {
      var button = document.getElementById("3");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==4) {
+     else if (a==4) {
      var button = document.getElementById("4");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==5) {
+     else if (a==5) {
      var button = document.getElementById("5");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==6) {
+     else if (a==6) {
      var button = document.getElementById("6");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==7) {
+     else if (a==7) {
      var button = document.getElementById("7");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==8) {
+     else if (a==8) {
      var button = document.getElementById("8");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     else if (x==9) {
+     else if (a==9) {
      var button = document.getElementById("9");
-     button.value = zeichen;
+     button.value = x;
      button.disabled=true;
      }
-     endepruefen();
+     check();
      }
   
-function xoo(button) {
-    if (zeichen=="X") {
-    zeichen="O";
-    setzen(button, zeichen);
+function win(button) {
+    if (x=="X") {
+    x="O";
+    set(button, x);
     }
-    else if (zeichen=="O") {
-    zeichen="X";
-    setzen(button, zeichen);
+    else if (x=="O") {
+    x="X";
+    set(button, x);
     }
     }
    
