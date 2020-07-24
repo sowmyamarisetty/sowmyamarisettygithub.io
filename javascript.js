@@ -58,7 +58,7 @@ function buttonsdisable() {
 
 function popupx(getwinner) {
       
-      buttonsdeaktivieren();
+      buttonsdisable();
     
       
       popuptext = document.getElementById("text");
@@ -86,35 +86,35 @@ function check() {
     
     
     if (((b1=="X") || (b1=="O")) && ((b1 == b2) && (b2 == b3))) {
-        popupz(b1);
+        popupx(b1);
     }
     
     else if (((b1=="X") || (b1=="O")) && ((b1 == b4) && (b4 == b7))){
-        popupz(b1);
+        popupx(b1);
     }
     
     else if (((b9=="X") || (b9=="O")) && ((b9 == b8) && (b8 == b7))){
-        popupz(b9);
+        popupx(b9);
     }
     
     else if (((b9=="X") || (b9=="O")) && ((b9 == b6) && (b6 == b3))){
-      popupz(b9);
+      popupx(b9);
     }
     
     else if (((b4=="X") || (b4=="O")) && ((b4 == b5) && (b5 == b6))){
-      popupz(b4);
+      popupx(b4);
     }
     
     else if (((b2=="X") || (b2=="O")) && ((b2 == b5) && (b5 == b8))){
-      popupz(b2);
+      popupx(b2);
     }
     
     else if (((b1=="X") || (b1=="O")) && ((b1 == b5) && (b5== b9))){
-      popupz(b1);
+      popupx(b1);
     }
-    //7-3 Diagonale
+    
     else if (((b7=="X") || (b7=="O")) && ((b7 == b5) && (b5 == b3))){
-      popupz(b7);
+      popupx(b7);
     }
     
     }
