@@ -19,7 +19,7 @@ var pointSpacing = (60-pointSize)/(columns-1);	//Specifies the spacing between p
 //Set up the game board with the specified number of rows and columns
 function setBoard(){
 	pointSize = 14-1.75*columns;
-	pointSpacing = (70-pointSize)/(columns-1);
+	pointSpacing = (60-pointSize)/(columns-1);
 	checkCount = [0,0,0,0];
 	structure = [];
 	turnCount = 0;
@@ -41,7 +41,7 @@ function setBoard(){
 				structure[i][j][k].id = k.toString()+j.toString()+i.toString()+'2';
 				structure[i][j][k].style.width = (pointSize*(1+zOffset*i))+'%';
 				structure[i][j][k].style.padding = ((pointSize/2)*(1+zOffset*i))+'% 0%';
-				structure[i][j][k].style.left = (pointSpacing*(1+zOffset*i)*k+i*i+i*2)+'%';
+				structure[i][j][k].style.left = (-15+pointSpacing*(1+zOffset*i)*k+i*i+i*2)+'%';
 				structure[i][j][k].style.top = (50+pointSpacing*(1+zOffset*i)*j+i*i+i*2)+'%';
 				//structure[i][j][k].style.backgroundColor = '#'+(3+5*i)+'F'+(k)+'0'+(j)+'1';
 				structure[i][j][k].addEventListener('mouseover', addFocus, false);
